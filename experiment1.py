@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # EpLogic
+# # EpLogic - Experiment 1
 
 # ## Common imports
 
