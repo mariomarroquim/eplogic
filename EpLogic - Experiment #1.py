@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # EpLogic - Experiment 1
+# # EpLogic - Experiment #1
 
 # ## Common imports
 
-# In[56]:
+# In[52]:
 
 
 print()
@@ -25,21 +25,21 @@ print('All fine!')
 
 # ## Retrieving datasets
 
-# In[57]:
+# In[53]:
 
 
 print()
 
-instances_pe = pd.read_csv('./datasets/pe-dataset.csv')
+instances_pe = pd.read_csv('./datasets/auto-epa/20200130/pe-dataset.csv')
 print('PE dataset:', instances_pe.shape)
 
-instances_sp = pd.read_csv('./datasets/sp-dataset.csv')
+instances_sp = pd.read_csv('./datasets/auto-epa/20200130/sp-dataset.csv')
 print('SP dataset:', instances_sp.shape)
 
 
 # ## Cleaning datasets
 
-# In[58]:
+# In[54]:
 
 
 print()
@@ -53,13 +53,13 @@ print('SP cleaned dataset:', cln_instances_sp.shape)
 
 # ## Exploring the PE dataset
 
-# In[59]:
+# In[55]:
 
 
 cln_instances_pe.head(3)
 
 
-# In[60]:
+# In[56]:
 
 
 print()
@@ -73,13 +73,13 @@ print('Proportion:  ', int(eplets_pe_count[0] / eplets_pe_count[1]), ': 1')
 
 # ## Exploring the SP dataset
 
-# In[61]:
+# In[57]:
 
 
 cln_instances_sp.head(3)
 
 
-# In[62]:
+# In[58]:
 
 
 print()
@@ -93,7 +93,7 @@ print('Proportion:  ', int(eplets_sp_count[0] / eplets_sp_count[1]), ': 1')
 
 # ## Preparing train/validation instances
 
-# In[63]:
+# In[59]:
 
 
 print()
@@ -103,6 +103,10 @@ imb_instances_pe = cln_instances_pe.drop(columns=['reactive'])
 
 rus = RandomUnderSampler()
 train_instances_pe, train_labels_pe = rus.fit_sample(imb_instances_pe, imb_train_labels_pe)
+
+# Comment the two lines above and uncomment the one below to
+# see the results without any balancing on the training data...
+#train_instances_pe, train_labels_pe = imb_instances_pe, imb_train_labels_pe
 
 print('Train labels (PE)', train_instances_pe.shape)
 print('Train instances (PE):', train_labels_pe.shape)
@@ -118,7 +122,7 @@ print('Validation instances (SP):', validation_labels_sp.shape)
 
 # ## Training the model and validating it
 
-# In[64]:
+# In[60]:
 
 
 clf = RandomForestClassifier(n_estimators=100)

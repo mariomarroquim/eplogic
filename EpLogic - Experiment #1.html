@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>EpLogic - Experiment 1</title>
+<title>EpLogic - Experiment #1</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -9129,15 +9129,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box
+/* This file is a compatability layer.  It allows the usage of flexible box 
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this
+`Modern browsers` comments below).  Browsers that are known to implement this 
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+
+    Internet Explorer 11+ 
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -12519,7 +12519,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for
+  /* This injects handle bars (a short, wide = symbol) for 
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -13033,14 +13033,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  }
-  div.output_wrapper {
+  } 
+  div.output_wrapper { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
-  div.output {
+  div.output { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
 }
 </style>
@@ -13090,7 +13090,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13141,15 +13141,15 @@ All fine!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
 
-<span class="n">instances_pe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./datasets/pe-dataset.csv&#39;</span><span class="p">)</span>
+<span class="n">instances_pe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./datasets/auto-epa/20200130/pe-dataset.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PE dataset:&#39;</span><span class="p">,</span> <span class="n">instances_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-<span class="n">instances_sp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./datasets/sp-dataset.csv&#39;</span><span class="p">)</span>
+<span class="n">instances_sp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./datasets/auto-epa/20200130/sp-dataset.csv&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SP dataset:&#39;</span><span class="p">,</span> <span class="n">instances_sp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 
@@ -13168,8 +13168,8 @@ All fine!
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-PE dataset: (40478, 8)
-SP dataset: (40183, 8)
+PE dataset: (81399, 12)
+SP dataset: (67683, 12)
 </pre>
 </div>
 </div>
@@ -13187,7 +13187,7 @@ SP dataset: (40183, 8)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13214,8 +13214,8 @@ SP dataset: (40183, 8)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-PE cleaned dataset: (40478, 6)
-SP cleaned dataset: (40183, 6)
+PE cleaned dataset: (81399, 10)
+SP cleaned dataset: (67683, 10)
 </pre>
 </div>
 </div>
@@ -13233,7 +13233,7 @@ SP cleaned dataset: (40183, 6)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cln_instances_pe</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -13249,7 +13249,7 @@ SP cleaned dataset: (40183, 6)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[59]:</div>
+    <div class="prompt output_prompt">Out[55]:</div>
 
 
 
@@ -13272,6 +13272,10 @@ SP cleaned dataset: (40183, 6)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>locus_abc</th>
+      <th>locus_dr</th>
+      <th>locus_dq</th>
+      <th>locus_dp</th>
       <th>panel_nc</th>
       <th>panel_pc</th>
       <th>panel_allele_count</th>
@@ -13283,6 +13287,10 @@ SP cleaned dataset: (40183, 6)
   <tbody>
     <tr>
       <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>126</td>
       <td>10803</td>
       <td>1</td>
@@ -13292,6 +13300,10 @@ SP cleaned dataset: (40183, 6)
     </tr>
     <tr>
       <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>126</td>
       <td>10803</td>
       <td>1</td>
@@ -13301,6 +13313,10 @@ SP cleaned dataset: (40183, 6)
     </tr>
     <tr>
       <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>126</td>
       <td>10803</td>
       <td>4</td>
@@ -13321,7 +13337,7 @@ SP cleaned dataset: (40183, 6)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13348,8 +13364,8 @@ SP cleaned dataset: (40183, 6)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Non reactive: 38746
-Reactive:     1732
+Non reactive: 77981
+Reactive:     3418
 Proportion:   22 : 1
 </pre>
 </div>
@@ -13368,7 +13384,7 @@ Proportion:   22 : 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cln_instances_sp</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -13384,7 +13400,7 @@ Proportion:   22 : 1
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[61]:</div>
+    <div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -13407,6 +13423,10 @@ Proportion:   22 : 1
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>locus_abc</th>
+      <th>locus_dr</th>
+      <th>locus_dq</th>
+      <th>locus_dp</th>
       <th>panel_nc</th>
       <th>panel_pc</th>
       <th>panel_allele_count</th>
@@ -13418,6 +13438,10 @@ Proportion:   22 : 1
   <tbody>
     <tr>
       <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>138</td>
       <td>12707</td>
       <td>1</td>
@@ -13427,6 +13451,10 @@ Proportion:   22 : 1
     </tr>
     <tr>
       <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>138</td>
       <td>12707</td>
       <td>27</td>
@@ -13436,6 +13464,10 @@ Proportion:   22 : 1
     </tr>
     <tr>
       <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>138</td>
       <td>12707</td>
       <td>1</td>
@@ -13456,7 +13488,7 @@ Proportion:   22 : 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13483,8 +13515,8 @@ Proportion:   22 : 1
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Non reactive: 39100
-Reactive:     1083
+Non reactive: 65870
+Reactive:     1813
 Proportion:   36 : 1
 </pre>
 </div>
@@ -13503,7 +13535,7 @@ Proportion:   36 : 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13513,6 +13545,10 @@ Proportion:   36 : 1
 
 <span class="n">rus</span> <span class="o">=</span> <span class="n">RandomUnderSampler</span><span class="p">()</span>
 <span class="n">train_instances_pe</span><span class="p">,</span> <span class="n">train_labels_pe</span> <span class="o">=</span> <span class="n">rus</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">imb_instances_pe</span><span class="p">,</span> <span class="n">imb_train_labels_pe</span><span class="p">)</span>
+
+<span class="c1"># Comment the two lines above and uncomment the one below to</span>
+<span class="c1"># see the results without any balancing on the training data...</span>
+<span class="c1">#train_instances_pe, train_labels_pe = imb_instances_pe, imb_train_labels_pe</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train labels (PE)&#39;</span><span class="p">,</span> <span class="n">train_instances_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train instances (PE):&#39;</span><span class="p">,</span> <span class="n">train_labels_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -13541,11 +13577,11 @@ Proportion:   36 : 1
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Train labels (PE) (3464, 5)
-Train instances (PE): (3464,)
+Train labels (PE) (6836, 9)
+Train instances (PE): (6836,)
 
-Validation labels (SP) (40183, 5)
-Validation instances (SP): (40183,)
+Validation labels (SP) (67683, 9)
+Validation instances (SP): (67683,)
 </pre>
 </div>
 </div>
@@ -13563,7 +13599,7 @@ Validation instances (SP): (40183,)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
@@ -13606,21 +13642,25 @@ Validation instances (SP): (40183,)
 Variable importance:
 
                      importance
-panel_min_mfi         0.503693
-panel_max_mfi         0.204548
-panel_allele_count    0.100670
-panel_nc              0.098406
-panel_pc              0.092683
+panel_min_mfi         0.524694
+panel_max_mfi         0.188030
+panel_allele_count    0.094526
+panel_pc              0.082317
+panel_nc              0.080685
+locus_abc             0.008719
+locus_dp              0.007219
+locus_dq              0.007059
+locus_dr              0.006750
 
 Confusion matrix:
 
- [[34266  4834]
- [  152   931]]
+ [[57624  8246]
+ [  180  1633]]
 
 Validation metrics:
 
- - Accuracy: 87.59
- - AUC-ROC:  86.80
+ - Accuracy: 87.55
+ - AUC-ROC:  88.78
 </pre>
 </div>
 </div>
@@ -13634,7 +13674,7 @@ Validation metrics:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
@@ -13646,7 +13686,7 @@ Validation metrics:
   </div>
 </body>
 
-
+ 
 
 
 </html>
