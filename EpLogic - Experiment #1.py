@@ -5,7 +5,7 @@
 
 # ## Common imports
 
-# In[52]:
+# In[12]:
 
 
 print()
@@ -25,7 +25,7 @@ print('All fine!')
 
 # ## Retrieving datasets
 
-# In[53]:
+# In[13]:
 
 
 print()
@@ -39,7 +39,7 @@ print('SP dataset:', instances_sp.shape)
 
 # ## Cleaning datasets
 
-# In[54]:
+# In[14]:
 
 
 print()
@@ -53,13 +53,13 @@ print('SP cleaned dataset:', cln_instances_sp.shape)
 
 # ## Exploring the PE dataset
 
-# In[55]:
+# In[15]:
 
 
 cln_instances_pe.head(3)
 
 
-# In[56]:
+# In[16]:
 
 
 print()
@@ -73,13 +73,13 @@ print('Proportion:  ', int(eplets_pe_count[0] / eplets_pe_count[1]), ': 1')
 
 # ## Exploring the SP dataset
 
-# In[57]:
+# In[17]:
 
 
 cln_instances_sp.head(3)
 
 
-# In[58]:
+# In[18]:
 
 
 print()
@@ -93,7 +93,7 @@ print('Proportion:  ', int(eplets_sp_count[0] / eplets_sp_count[1]), ': 1')
 
 # ## Preparing train/validation instances
 
-# In[59]:
+# In[19]:
 
 
 print()
@@ -122,7 +122,7 @@ print('Validation instances (SP):', validation_labels_sp.shape)
 
 # ## Training the model and validating it
 
-# In[60]:
+# In[20]:
 
 
 clf = RandomForestClassifier(n_estimators=100)
@@ -139,12 +139,12 @@ print('Variable importance:\n\n', feature_importances)
 predicted_labels_sp = clf.predict(validation_instances_sp)
 
 print()
-print('Confusion matrix:\n\n', mt.confusion_matrix(validation_labels_sp, predicted_labels_sp))
+print('- Confusion matrix (TN FP FN TP):', mt.confusion_matrix(validation_labels_sp, predicted_labels_sp).ravel())
 
 print()
 print('Validation metrics:\n')
-print(' - Accuracy: %0.2f' % (mt.accuracy_score(validation_labels_sp, predicted_labels_sp) * 100))
 print(' - AUC-ROC:  %0.2f' % (mt.roc_auc_score(validation_labels_sp, predicted_labels_sp) * 100))
+print(' - Accuracy: %0.2f' % (mt.accuracy_score(validation_labels_sp, predicted_labels_sp) * 100))
 
 
 # In[ ]:

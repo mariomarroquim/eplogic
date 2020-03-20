@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>EpLogic - Experiment #1</title>
+<title>EpLogic - Experiment #2</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13090,7 +13090,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13141,7 +13141,7 @@ All fine!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13187,7 +13187,7 @@ SP dataset: (67683, 12)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13233,7 +13233,7 @@ SP cleaned dataset: (67683, 10)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cln_instances_pe</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -13249,7 +13249,7 @@ SP cleaned dataset: (67683, 10)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -13337,7 +13337,7 @@ SP cleaned dataset: (67683, 10)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13384,7 +13384,7 @@ Proportion:   22 : 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cln_instances_sp</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -13400,7 +13400,7 @@ Proportion:   22 : 1
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -13488,7 +13488,7 @@ Proportion:   22 : 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13535,7 +13535,7 @@ Proportion:   36 : 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13544,22 +13544,21 @@ Proportion:   36 : 1
 <span class="n">imb_instances_pe</span> <span class="o">=</span> <span class="n">cln_instances_pe</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;reactive&#39;</span><span class="p">])</span>
 
 <span class="n">rus</span> <span class="o">=</span> <span class="n">RandomUnderSampler</span><span class="p">()</span>
-<span class="n">train_instances_pe</span><span class="p">,</span> <span class="n">train_labels_pe</span> <span class="o">=</span> <span class="n">rus</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">imb_instances_pe</span><span class="p">,</span> <span class="n">imb_train_labels_pe</span><span class="p">)</span>
 
-<span class="c1"># Comment the two lines above and uncomment the one below to</span>
-<span class="c1"># see the results without any balancing on the training data...</span>
-<span class="c1">#train_instances_pe, train_labels_pe = imb_instances_pe, imb_train_labels_pe</span>
+<span class="n">train_instances_pe</span><span class="p">,</span> <span class="n">train_labels_pe</span> <span class="o">=</span> <span class="n">rus</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">imb_instances_pe</span><span class="p">,</span> <span class="n">imb_train_labels_pe</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train labels (PE)&#39;</span><span class="p">,</span> <span class="n">train_instances_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train instances (PE):&#39;</span><span class="p">,</span> <span class="n">train_labels_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">()</span>
 
-<span class="n">validation_labels_sp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cln_instances_sp</span><span class="p">[</span><span class="s1">&#39;reactive&#39;</span><span class="p">])</span>
-<span class="n">validation_instances_sp</span> <span class="o">=</span> <span class="n">cln_instances_sp</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;reactive&#39;</span><span class="p">])</span>
+<span class="n">imb_train_labels_sp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cln_instances_sp</span><span class="p">[</span><span class="s1">&#39;reactive&#39;</span><span class="p">])</span>
+<span class="n">imb_instances_sp</span> <span class="o">=</span> <span class="n">cln_instances_sp</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;reactive&#39;</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation labels (SP)&#39;</span><span class="p">,</span> <span class="n">validation_instances_sp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation instances (SP):&#39;</span><span class="p">,</span> <span class="n">validation_labels_sp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">train_instances_sp</span><span class="p">,</span> <span class="n">train_labels_sp</span> <span class="o">=</span> <span class="n">rus</span><span class="o">.</span><span class="n">fit_sample</span><span class="p">(</span><span class="n">imb_instances_sp</span><span class="p">,</span> <span class="n">imb_train_labels_sp</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train labels (SP)&#39;</span><span class="p">,</span> <span class="n">train_instances_sp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train instances (SP):&#39;</span><span class="p">,</span> <span class="n">train_labels_sp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13580,8 +13579,8 @@ Proportion:   36 : 1
 Train labels (PE) (6836, 9)
 Train instances (PE): (6836,)
 
-Validation labels (SP) (67683, 9)
-Validation instances (SP): (67683,)
+Train labels (SP) (3626, 9)
+Train instances (SP): (3626,)
 </pre>
 </div>
 </div>
@@ -13599,29 +13598,50 @@ Validation instances (SP): (67683,)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">scoring</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">,</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">]</span>
 
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_instances_pe</span><span class="p">,</span> <span class="n">train_labels_pe</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">PE ---&#39;</span><span class="p">)</span>
 
-<span class="n">feature_importances</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span>
-                                   <span class="n">index</span> <span class="o">=</span> <span class="n">cln_instances_pe</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;reactive&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
-                                   <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;importance&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;importance&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Variable importance:</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">feature_importances</span><span class="p">)</span>
-
-<span class="n">predicted_labels_sp</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">validation_instances_sp</span><span class="p">)</span>
+<span class="n">predicted_labels_pe</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">train_instances_pe</span><span class="p">,</span> <span class="n">train_labels_pe</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Confusion matrix (TN FP FN TP):&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">validation_labels_sp</span><span class="p">,</span> <span class="n">predicted_labels_sp</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First step:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Confusion matrix (TN FP FN TP):&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">train_labels_pe</span><span class="p">,</span> <span class="n">predicted_labels_pe</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- AUC-ROC: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mt</span><span class="o">.</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">train_labels_pe</span><span class="p">,</span> <span class="n">predicted_labels_pe</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Accuracy: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mt</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">train_labels_pe</span><span class="p">,</span> <span class="n">predicted_labels_pe</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+
+<span class="n">scores</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">cross_validate</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">train_instances_pe</span><span class="p">,</span> <span class="n">train_labels_pe</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation metrics:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; - AUC-ROC:  </span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mt</span><span class="o">.</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">validation_labels_sp</span><span class="p">,</span> <span class="n">predicted_labels_sp</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; - Accuracy: </span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mt</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">validation_labels_sp</span><span class="p">,</span> <span class="n">predicted_labels_sp</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Second step:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- AUC-ROC:  </span><span class="si">%0.2f</span><span class="s2"> (+/- </span><span class="si">%0.2f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s1">&#39;test_roc_auc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span><span class="s1">&#39;test_roc_auc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Accuracy: </span><span class="si">%0.2f</span><span class="s2"> (+/- </span><span class="si">%0.2f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s1">&#39;test_accuracy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span><span class="s1">&#39;test_accuracy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+
+
+<span class="c1">#---</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">SP ---&#39;</span><span class="p">)</span>
+
+<span class="n">predicted_labels_sp</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">train_instances_sp</span><span class="p">,</span> <span class="n">train_labels_sp</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First step:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Confusion matrix (TN FP FN TP):&#39;</span><span class="p">,</span> <span class="n">mt</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">train_labels_sp</span><span class="p">,</span> <span class="n">predicted_labels_sp</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- AUC-ROC: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mt</span><span class="o">.</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">train_labels_sp</span><span class="p">,</span> <span class="n">predicted_labels_sp</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Accuracy: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mt</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">train_labels_sp</span><span class="p">,</span> <span class="n">predicted_labels_sp</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+
+<span class="n">scores</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">cross_validate</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">train_instances_sp</span><span class="p">,</span> <span class="n">train_labels_sp</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Second step:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- AUC-ROC:  </span><span class="si">%0.2f</span><span class="s2"> (+/- </span><span class="si">%0.2f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s1">&#39;test_roc_auc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span><span class="s1">&#39;test_roc_auc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Accuracy: </span><span class="si">%0.2f</span><span class="s2"> (+/- </span><span class="si">%0.2f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s1">&#39;test_accuracy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span><span class="s1">&#39;test_accuracy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13639,25 +13659,31 @@ Validation instances (SP): (67683,)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Variable importance:
+PE ---
 
-                     importance
-panel_min_mfi         0.541107
-panel_max_mfi         0.170372
-panel_allele_count    0.094676
-panel_pc              0.082895
-panel_nc              0.081082
-locus_abc             0.008486
-locus_dp              0.007922
-locus_dq              0.007170
-locus_dr              0.006290
+First step:
 
-- Confusion matrix (TN FP FN TP): [57637  8233   181  1632]
+- Confusion matrix (TN FP FN TP): [2674  744  493 2925]
+- AUC-ROC: 81.90
+- Accuracy: 81.90
 
-Validation metrics:
+Second step:
 
- - AUC-ROC:  88.76
- - Accuracy: 87.57
+- AUC-ROC:  87.77 (+/- 0.67)
+- Accuracy: 81.70 (+/- 1.07)
+
+SP ---
+
+First step:
+
+- Confusion matrix (TN FP FN TP): [1541  272  168 1645]
+- AUC-ROC: 87.87
+- Accuracy: 87.87
+
+Second step:
+
+- AUC-ROC:  92.26 (+/- 0.85)
+- Accuracy: 87.78 (+/- 1.32)
 </pre>
 </div>
 </div>
