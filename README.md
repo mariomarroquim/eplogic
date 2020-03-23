@@ -11,8 +11,10 @@ These datasets comprise mismatched eplets from HLA alleles tested in single anti
 Experiments
 -----------
 
-* 1 - Uses the PE dataset for training and the SP dataset for validation. The PE dataset was balanced (under-sampling) before the training with Random Forest. The model yielded 89% accuracy and 88% AUC-ROC.
-* 2 - Uses the PE and SP datasets for cross-validation. Both were balanced (under-sampling) before the cross-validation with the Random Forest algorithm. The model yielded 82%/88% mean accuracy and 88%/92% mean AUC-ROC for the PE/SP datasets, respectively.
+* 1 - Simple train/test validation. 89% accuracy and 88% AUC-ROC.
+* 2 - Cross-validation. 88% accuracy and 92% AUC-ROC.
+* 3 - Cross-validation & feature selection. 89% accuracy and 94% AUC-ROC.
+* 4 - Cross-validation & feature selection & hyperparameter tuning. 91% accuracy and 94% AUC-ROC.
 
 Support
 -------

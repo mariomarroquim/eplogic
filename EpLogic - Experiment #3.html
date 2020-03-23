@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>EpLogic - Experiment #2</title>
+<title>EpLogic - Experiment #3</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="EpLogic---Experiment-#2">EpLogic - Experiment #2<a class="anchor-link" href="#EpLogic---Experiment-#2">&#182;</a></h1>
+<h1 id="EpLogic---Experiment-#3">EpLogic - Experiment #3<a class="anchor-link" href="#EpLogic---Experiment-#3">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13090,7 +13090,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13135,13 +13135,13 @@ All fine!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Retrieving-datasets">Retrieving datasets<a class="anchor-link" href="#Retrieving-datasets">&#182;</a></h2>
+<h2 id="Retrieving-the-datasets">Retrieving the datasets<a class="anchor-link" href="#Retrieving-the-datasets">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13187,12 +13187,12 @@ SP dataset: (67683, 12)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
 
-<span class="n">cln_instances_pe</span> <span class="o">=</span> <span class="n">instances_pe</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;panel_info&#39;</span><span class="p">,</span> <span class="s1">&#39;panel_eplet&#39;</span><span class="p">])</span>
+<span class="n">cln_instances_pe</span> <span class="o">=</span> <span class="n">instances_pe</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;panel_info&#39;</span><span class="p">,</span> <span class="s1">&#39;panel_eplet&#39;</span><span class="p">,</span> <span class="s1">&#39;locus_abc&#39;</span><span class="p">,</span> <span class="s1">&#39;locus_dp&#39;</span><span class="p">,</span> <span class="s1">&#39;locus_dq&#39;</span><span class="p">,</span> <span class="s1">&#39;locus_dr&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PE cleaned dataset:&#39;</span><span class="p">,</span> <span class="n">cln_instances_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="n">cln_instances_sp</span> <span class="o">=</span> <span class="n">instances_sp</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;panel_info&#39;</span><span class="p">,</span> <span class="s1">&#39;panel_eplet&#39;</span><span class="p">])</span>
@@ -13214,310 +13214,8 @@ SP dataset: (67683, 12)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-PE cleaned dataset: (81399, 10)
+PE cleaned dataset: (81399, 6)
 SP cleaned dataset: (67683, 10)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exploring-the-PE-dataset">Exploring the PE dataset<a class="anchor-link" href="#Exploring-the-PE-dataset">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cln_instances_pe</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>locus_abc</th>
-      <th>locus_dr</th>
-      <th>locus_dq</th>
-      <th>locus_dp</th>
-      <th>panel_nc</th>
-      <th>panel_pc</th>
-      <th>panel_allele_count</th>
-      <th>panel_min_mfi</th>
-      <th>panel_max_mfi</th>
-      <th>reactive</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>126</td>
-      <td>10803</td>
-      <td>1</td>
-      <td>483</td>
-      <td>483</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>126</td>
-      <td>10803</td>
-      <td>1</td>
-      <td>778</td>
-      <td>778</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>126</td>
-      <td>10803</td>
-      <td>4</td>
-      <td>6939</td>
-      <td>10219</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
-
-<span class="n">eplets_pe_count</span> <span class="o">=</span> <span class="n">cln_instances_pe</span><span class="o">.</span><span class="n">reactive</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Non reactive:&#39;</span><span class="p">,</span> <span class="n">eplets_pe_count</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reactive:    &#39;</span><span class="p">,</span> <span class="n">eplets_pe_count</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Proportion:  &#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">eplets_pe_count</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">eplets_pe_count</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="s1">&#39;: 1&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-Non reactive: 77981
-Reactive:     3418
-Proportion:   22 : 1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exploring-the-SP-dataset">Exploring the SP dataset<a class="anchor-link" href="#Exploring-the-SP-dataset">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cln_instances_sp</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[23]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>locus_abc</th>
-      <th>locus_dr</th>
-      <th>locus_dq</th>
-      <th>locus_dp</th>
-      <th>panel_nc</th>
-      <th>panel_pc</th>
-      <th>panel_allele_count</th>
-      <th>panel_min_mfi</th>
-      <th>panel_max_mfi</th>
-      <th>reactive</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>138</td>
-      <td>12707</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>138</td>
-      <td>12707</td>
-      <td>27</td>
-      <td>0</td>
-      <td>17344</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>138</td>
-      <td>12707</td>
-      <td>1</td>
-      <td>86</td>
-      <td>86</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
-
-<span class="n">eplets_sp_count</span> <span class="o">=</span> <span class="n">cln_instances_sp</span><span class="o">.</span><span class="n">reactive</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Non reactive:&#39;</span><span class="p">,</span> <span class="n">eplets_sp_count</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reactive:    &#39;</span><span class="p">,</span> <span class="n">eplets_sp_count</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Proportion:  &#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">eplets_sp_count</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">eplets_sp_count</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="s1">&#39;: 1&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-Non reactive: 65870
-Reactive:     1813
-Proportion:   36 : 1
 </pre>
 </div>
 </div>
@@ -13535,7 +13233,7 @@ Proportion:   36 : 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">()</span>
@@ -13576,7 +13274,7 @@ Proportion:   36 : 1
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Train labels (PE) (6836, 9)
+Train labels (PE) (6836, 5)
 Train instances (PE): (6836,)
 
 Train labels (SP) (3626, 9)
@@ -13598,7 +13296,7 @@ Train instances (SP): (3626,)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
@@ -13663,27 +13361,27 @@ PE ---
 
 First step:
 
-- Confusion matrix (TN FP FN TP): [2674  744  493 2925]
-- AUC-ROC: 81.90
-- Accuracy: 81.90
+- Confusion matrix (TN FP FN TP): [2675  743  514 2904]
+- AUC-ROC: 81.61
+- Accuracy: 81.61
 
 Second step:
 
-- AUC-ROC:  87.77 (+/- 0.67)
-- Accuracy: 81.70 (+/- 1.07)
+- AUC-ROC:  87.36 (+/- 0.78)
+- Accuracy: 81.70 (+/- 1.14)
 
 SP ---
 
 First step:
 
-- Confusion matrix (TN FP FN TP): [1541  272  168 1645]
-- AUC-ROC: 87.87
-- Accuracy: 87.87
+- Confusion matrix (TN FP FN TP): [1574  239  143 1670]
+- AUC-ROC: 89.46
+- Accuracy: 89.46
 
 Second step:
 
-- AUC-ROC:  92.26 (+/- 0.85)
-- Accuracy: 87.78 (+/- 1.32)
+- AUC-ROC:  93.98 (+/- 0.67)
+- Accuracy: 89.27 (+/- 0.76)
 </pre>
 </div>
 </div>
