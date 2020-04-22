@@ -11,10 +11,10 @@ These datasets comprise mismatched eplets from HLA alleles tested in single anti
 Experiments
 -----------
 
-* 1 - Simple train/test validation. 89% accuracy and 88% AUC-ROC.
-* 2 - Cross-validation. 88% accuracy and 92% AUC-ROC.
-* 3 - Cross-validation & feature selection. 89% accuracy and 94% AUC-ROC.
-* 4 - Cross-validation & feature selection & hyperparameter tuning. 91% accuracy and 94% AUC-ROC.
+* Simple train/test validation. 89% accuracy and 88% AUC-ROC.
+* Cross-validation. 88% accuracy and 92% AUC-ROC.
+* Cross-validation & feature selection. 89% accuracy and 94% AUC-ROC.
+* Cross-validation & feature selection & hyperparameter tuning. 91% accuracy and 94% AUC-ROC.
 
 Support
 -------
