@@ -15,6 +15,7 @@ Experiments
 * Cross-validation. 88% accuracy and 92% AUC-ROC.
 * Cross-validation & feature selection. 89% accuracy and 94% AUC-ROC.
 * Cross-validation & feature selection & hyperparameter tuning. 91% accuracy and 94% AUC-ROC.
+* Automated train/test validation with Auto-sklearn. 88.97% accuracy and AUC-ROC.
 
 Support
 -------
