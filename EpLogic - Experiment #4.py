@@ -31,10 +31,10 @@ print('All fine!')
 
 print()
 
-instances_pe = pd.read_csv('./datasets/auto-epa/20200130/pe-dataset.csv')
+instances_pe = pd.read_csv('datasets/pe-dataset.csv')
 print('PE dataset:', instances_pe.shape)
 
-instances_sp = pd.read_csv('./datasets/auto-epa/20200130/sp-dataset.csv')
+instances_sp = pd.read_csv('datasets/sp-dataset.csv')
 print('SP dataset:', instances_sp.shape)
 
 
