@@ -15,6 +15,15 @@ Experiments
 * Cross-validation & feature selection. 89% accuracy and 94% AUC-ROC.
 * Cross-validation & feature selection & hyperparameter tuning. 91% accuracy and 94% AUC-ROC.
 
+
+Installation
+-----------
+
+Run the command to install the packages:
+
+`pip install -r requirements.txt`
+
+
 Support
 -------
 
