@@ -1,0 +1,1 @@
+http://127.0.0.1:5000/predict?max_mfi_a=21069&max_mfi_b=20402&max_mfi_drb=14793&max_mfi_dqa=6567&max_mfi_dqb=5120

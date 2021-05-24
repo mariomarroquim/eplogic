@@ -1,0 +1,44 @@
+body {
+  margin: 0px 24px 24px 24px;
+}
+
+p {
+  text-align: justify;
+}
+
+hr {
+  background: none;
+  border: none;
+  border-top: 1px solid #cccccc;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.small {
+  font-size: 14px;
+}
+
+.result {
+  margin-top: 12px;
+  margin-bottom: 24px;
+  padding: 18px;
+}
+
+.result--negative {
+  background-color: #99cc00;
+}
+
+.result--positive {
+  background-color: #ff9933;
+}
+
+.result__label {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.result hr {
+  border-top: 1px dotted #000000;
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>ML-VXM</title>
+  <meta name="description" content="A virtual crossmatch tool based on machine learning"/>
+  <meta name="author" content="Mário Marroquim (www.mariomarroquim.info)"/>
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/pure_min.css')}}"/>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/pure_responsive_min.css')}}"/>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}"/>
+  <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+</head>
+
+<body>
+  <h1>ML-VXM</h1>
+  <p>A virtual crossmatch tool based on machine learning</p>
+  <hr/>
+
+  <div class="pure-g">
+    <div class="pure-u-1 pure-u-lg-2-3 pure-u-xl-1-2">
+      <p>
+        <span class="small strong">Instructions:</span>
+        <br/>
+
+        <ul class="small">
+          <li>Fill this form with the patient's SAB panels MFI values for the donor's HLA alleles, per locus.</li>
+          <li>If a donor's HLA allele is present in more than one bead, choose its lowest MFI value.</li>
+          <li>If all donor's HLA alleles from a specific locus are not tested, leave its field blank.</li>
+        </ul>
+      </p>
+
+      <form id="form" action="/predict" method="get" class="pure-form pure-form-stacked">
+        <fieldset>
+          <legend class="small strong">Donor's HLA alleles MFI values</legend>
+
+          <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-1-3">
+              <label for="max_mfi_a">HLA-A</label>
+              <input type="number" min="0" step="1" id="max_mfi_a" name="max_mfi_a" class="pure-u-1 pure-u-md-23-24"/>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-3">
+              <label for="max_mfi_b">HLA-B</label>
+              <input type="number" min="0" step="1" id="max_mfi_b" name="max_mfi_b" class="pure-u-1 pure-u-md-23-24"/>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-3">
+              <label for="max_mfi_c">HLA-C</label>
+              <input type="number" min="0" step="1" id="max_mfi_c" name="max_mfi_c" class="pure-u-1"/>
+            </div>
+          </div>
+
+          <br/>
+
+          <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-1-5">
+              <label for="max_mfi_drb">HLA-DRB</label>
+              <input type="number" min="0" step="1" id="max_mfi_drb" name="max_mfi_drb" class="pure-u-1 pure-u-md-22-24"/>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-5">
+              <label for="max_mfi_dqa">HLA-DQA</label>
+              <input type="number" min="0" step="1" id="max_mfi_dqa" name="max_mfi_dqa" class="pure-u-1 pure-u-md-22-24"/>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-5">
+              <label for="max_mfi_dqb">HLA-DQB</label>
+              <input type="number" min="0" step="1" id="max_mfi_dqb" name="max_mfi_dqb" class="pure-u-1 pure-u-md-22-24"/>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-5">
+              <label for="max_mfi_dpa">HLA-DPA</label>
+              <input type="number" min="0" step="1" id="max_mfi_dpa" name="max_mfi_dpa" class="pure-u-1 pure-u-md-22-24"/>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-5">
+              <label for="max_mfi_dpb">HLA-DPB</label>
+              <input type="number" min="0" step="1" id="max_mfi_dpb" name="max_mfi_dpb" class="pure-u-1" />
+            </div>
+          </div>
+
+          <br/>
+          <button type="submit" class="pure-button pure-button-primary strong">Perform virtual crossmatch</button>
+        </fieldset>
+      </form>
+
+      <div id="result" class="result" style="display: none;">
+        <p class="result__label">
+          Result: <span id="result__label">?</span>
+        </p>
+
+        <p class="result__score">
+          Score: <span id="result__score">?</span>
+        </p>
+
+        <hr/>
+
+        <p class="result__interpretation small">
+          <span class="strong">The result is more reliable if:</span>
+          <br/>
+
+          <ul class="small">
+            <li>The donor's HLA typing is complete and in high resolution (preferably w/o <a href="http://www.ephlaconverter.com.br/ephlaconverter/default/biologiamolecular">conversion</a>).</li>
+            <li>The SAB panels are the ones with the highest MFI values for the donor's HLA alleles.</li>
+            <li>The score is closer to 0, when the result is negative, or to 1, when it is positive.</li>
+          </ul>
+        </p>
+      </div>
+
+      <p class="small">
+        <span class="strong">IMPORTANT</span>:
+        This service is designed for research purposes only. It is not intended for making clinical decisions.
+      </p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <p class="small">
+    &copy; 2020 <a href="https://www.mariomarroquim.info">Mário Marroquim</a>. All rights reserved.
+  </p>
+
+  <script type="text/javascript" defer="defer" src="{{url_for('static', filename='js/jquery_min.js')}}"></script>
+  <script type="text/javascript" defer="defer" src="{{url_for('static', filename='js/custom.js')}}"></script>
+</body>
+</html>
