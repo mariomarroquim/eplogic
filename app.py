@@ -1,9 +1,17 @@
 from waitress import serve
 from flask import Flask, request, render_template, jsonify, make_response
-import pandas as pd
-from pycaret.classification import *
 
-vxm_model = load_model('notebook/vxm_model')
+import warnings; warnings.simplefilter('ignore')
+import pandas                  as pd
+import numpy                   as np
+import sklearn.model_selection as ms
+import sklearn.metrics         as mt
+from imblearn.under_sampling   import RandomUnderSampler
+from sklearn.ensemble          import RandomForestClassifier
+from sklearn.model_selection   import RandomizedSearchCV
+from joblib                    import dump, load
+
+vxm_model = load('notebooks/eplogic.joblib')
 
 app = Flask(__name__)
 
@@ -13,62 +21,27 @@ def index():
 
 @app.route("/predict", methods=['GET'])
 def predict():
-  try:
-    data = {
-      'max_mfi_a':   [None],
-      'max_mfi_b':   [None],
-      'max_mfi_c':   [None],
-      'max_mfi_drb': [None],
-      'max_mfi_dqa': [None],
-      'max_mfi_dqb': [None],
-      'max_mfi_dpa': [None],
-      'max_mfi_dpb': [None]
-    }
+  eplogic = load('notebooks/eplogic.joblib')
 
-    # Refactor this ugly code
-    if request.args.get('max_mfi_a') != None and request.args.get('max_mfi_a') != '':
-      data['max_mfi_a'] = [request.args.get('max_mfi_a')]
+  eplet_data = [[(0, 1)[request.args.get('hla_locus') == 'abc'],
+                  (0, 1)[request.args.get('hla_locus') == 'drb'],
+                  (0, 1)[request.args.get('hla_locus') == 'dq'],
+                  (0, 1)[request.args.get('hla_locus') == 'dp'],
+                  int(request.args.get('panel_nc')),
+                  int(request.args.get('panel_pc')),
+                  int(request.args.get('panel_allele_count')),
+                  int(request.args.get('panel_min_mfi')),
+                  int(request.args.get('panel_max_mfi'))]]
 
-    if request.args.get('max_mfi_b') != None and request.args.get('max_mfi_b') != '':
-      data['max_mfi_b'] = [request.args.get('max_mfi_b')]
 
-    if request.args.get('max_mfi_c') != None and request.args.get('max_mfi_c') != '':
-      data['max_mfi_c'] = [request.args.get('max_mfi_c')]
+  results = eplogic.predict(eplet_data)
+  probabilities = eplogic.predict_proba(eplet_data)
 
-    if request.args.get('max_mfi_drb') != None and request.args.get('max_mfi_drb') != '':
-      data['max_mfi_drb'] = [request.args.get('max_mfi_drb')]
+  predictions = jsonify(label=str(results[0]), score0=str(probabilities[0][0]), score1=str(probabilities[0][1]))
 
-    if request.args.get('max_mfi_dqa') != None and request.args.get('max_mfi_dqa') != '':
-      data['max_mfi_dqa'] = [request.args.get('max_mfi_dqa')]
-
-    if request.args.get('max_mfi_dqb') != None and request.args.get('max_mfi_dqb') != '':
-      data['max_mfi_dqb'] = [request.args.get('max_mfi_dqb')]
-
-    if request.args.get('max_mfi_dpa') != None and request.args.get('max_mfi_dpa') != '':
-      data['max_mfi_dpa'] = [request.args.get('max_mfi_dpa')]
-
-    if request.args.get('max_mfi_dpb') != None and request.args.get('max_mfi_dpb') != '':
-      data['max_mfi_dpb'] = [request.args.get('max_mfi_dpb')]
-
-    instances = pd.DataFrame(data, columns = ['max_mfi_a',
-                                              'max_mfi_b',
-                                              'max_mfi_c',
-                                              'max_mfi_drb',
-                                              'max_mfi_dqa',
-                                              'max_mfi_dqb',
-                                              'max_mfi_dpa',
-                                              'max_mfi_dpb'])
-
-    new_predictions = predict_model(vxm_model, data=instances)
-
-    output = jsonify(label=str(new_predictions['Label'][0]), score=str(new_predictions['Score'][0]))
-
-    response = make_response(output)
-    response.mimetype = 'application/json'
-    return response
-
-  except:
-    return "Please, verify if all parameters (max_mfi_a, max_mfi_b, max_mfi_c, max_mfi_drb, max_mfi_dqa, max_mfi_dqb, max_mfi_dpa and max_mfi_dpb) contain integer values.", 500
+  response = make_response(predictions)
+  response.mimetype = 'application/json'
+  return response
 
 if __name__ == "__main__":
   #app.run(host='0.0.0.0')
