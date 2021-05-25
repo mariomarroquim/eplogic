@@ -5,50 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>EpLogic</title>
-  <meta name="description" content="A simple tool to verify if a HLA eplet is antibody-reactive or not"/>
+  <meta name="description" content="A tool to verify if a HLA eplet is antibody-reactive"/>
 
   <link rel="stylesheet" href="{{url_for('static', filename='css/pure_min.css')}}"/>
   <link rel="stylesheet" href="{{url_for('static', filename='css/pure_responsive_min.css')}}"/>
   <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}"/>
-  <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}"/>
 </head>
 
 <body>
-  <h1>EpLogic</h1>
-  <p>A simple tool to verify if a HLA eplet is antibody-reactive or not</p>
-  <hr/>
+  <div class="header">
+    <h1><a href="/">EpLogic</a></h1>
 
-  <div class="pure-g">
+    <p>Verify if a HLA eplet is antibody-reactive.</p>
+  </div>
+
+  <div class="instructions">
+    <span class="strong">Instructions:</span>
+    <br/>
+
+    <ul>
+      <li>Fill the eplet's data from the SAB panel.</li>
+      <li>Click "Continue" to proceed.</li>
+    </ul>
+  </div>
+
+  <div class="content pure-g">
     <div class="pure-u-1 pure-u-lg-2-3 pure-u-xl-1-2">
-      <p>
-        <span class="small strong">Instructions:</span>
-        <br/>
-
-        <ul class="small">
-          <li>Fill in this form with the reactivity panel’s data for the eplet of interest.</li>
-          <li>Click at "Continue" to verify if the eplet is antibody-reactive or not.</li>
-        </ul>
-      </p>
-
       <form id="form" action="/predict" method="get" class="pure-form pure-form-stacked">
         <fieldset>
-          <legend class="small strong">Enter the eplet's data</legend>
-
           <div class="pure-g">
             <div class="pure-u-1-2">
               <label for="hla_locus">HLA locus group</label>
 
-              <select id="hla_locus" name="hla_locus" class="pure-u-23-24">
+              <select id="hla_locus" name="hla_locus" class="pure-u-22-24">
                 <option value="">Selecione...</option>
-                <option value="abc">A + B + C</option>
+                <option value="abc">ABC</option>
                 <option value="drb">DRB</option>
-                <option value="dq">DQB + DQA</option>
-                <option value="dp">DPB + DPA</option>
+                <option value="dq">DQ</option>
+                <option value="dp">DP</option>
               </select>
             </div>
 
             <div class="pure-u-1-2">
-              <label for="panel_allele_count">Allele Qtd.</label>
+              <label for="panel_allele_count">Allele quantity</label>
               <input type="number" min="0" step="1" id="panel_allele_count" name="panel_allele_count" class="pure-u-1"/>
             </div>
           </div>
@@ -56,21 +55,28 @@
           <br/>
 
           <div class="pure-g">
-            <div class="pure-u-1-4">
-              <label for="panel_nc">Panel's NC</label>
-              <input type="number" min="0" step="1" id="panel_nc" name="panel_nc" class="pure-u-22-24"/>
-            </div>
-            <div class="pure-u-1-4">
-              <label for="panel_pc">Panel's PC</label>
-              <input type="number" min="0" step="1" id="panel_pc" name="panel_pc" class="pure-u-22-24"/>
-            </div>
-            <div class="pure-u-1-4">
-              <label for="panel_min_mfi">Min. MFI</label>
+            <div class="pure-u-1-2">
+              <label for="panel_min_mfi">Eplet's  min. MFI</label>
               <input type="number" min="0" step="1" id="panel_min_mfi" name="panel_min_mfi" class="pure-u-22-24"/>
             </div>
-            <div class="pure-u-1-4">
-              <label for="panel_max_mfi">Max. MFI</label>
+
+            <div class="pure-u-1-2">
+              <label for="panel_max_mfi">Eplet's max. MFI</label>
               <input type="number" min="0" step="1" id="panel_max_mfi" name="panel_max_mfi" class="pure-u-1"/>
+            </div>
+          </div>
+
+          <br/>
+
+          <div class="pure-g">
+            <div class="pure-u-1-2">
+              <label for="panel_nc">Panel's Neg. Ctrl.</label>
+              <input type="number" min="0" step="1" id="panel_nc" name="panel_nc" class="pure-u-22-24"/>
+            </div>
+
+            <div class="pure-u-1-2">
+              <label for="panel_pc">Panel's Pos. Ctrl.</label>
+              <input type="number" min="0" step="1" id="panel_pc" name="panel_pc" class="pure-u-1"/>
             </div>
           </div>
 
@@ -82,30 +88,31 @@
 
       <div id="result" class="result" style="display: none;">
         <p class="result__label">
-          Result: <span id="result__label">?</span>
+          The eplet <span id="result__label">?</span> antibody-reactive!
         </p>
 
         <p class="result__scores">
-          *Probability of not beeing antibody-reactive: <span id="result__score0">?</span>
+          &#10132; Probability of not beeing antibody-reactive: <span id="result__score0">?</span>
           <br/>
-          **Probability of beeing antibody-reactive: <span id="result__score1">?</span>
+          &#10132; Probability of beeing antibody-reactive: <span id="result__score1">?</span>
         </p>
 
         <p>
-          Explanation: antibody-reactive HLA eplets are the ones against the patient may present important anti-HLA antibodies.
-          If the donor shares one of these eplets, the risk of the recipient developing rejection will be greater.
+          Note: antibody-reactive HLA eplets are the ones against the recipient may present important anti-HLA antibodies.
+          If the donor shares one of these eplets, the risk of the recipient developing antibody-mediated rejection against the graft will be greater.
+          Remember that all results presented here are based on probabilities. This tool is for research use only!
         </p>
       </div>
     </div>
   </div>
 
-  <hr/>
-
-  <p class="small">
-    © 2021 <a href="https://www.libufpi.com.br/">LIB-UFPI</a>. All rights reserved.
+  <div class="footer">
+    <hr/>
     <br/>
-    <small>Current version: 1.0.0-alpha. This tool, in its current version, is for research use only.</small>
-  </p>
+    © 2021 <a href="https://www.libufpi.com.br">LIB-UFPI</a>. All rights reserved.
+    <br/>
+    <small>Version: 1.0.0-alpha. For research use only.</small>
+  </div>
 
   <script type="text/javascript" defer="defer" src="{{url_for('static', filename='js/jquery_min.js')}}"></script>
   <script type="text/javascript" defer="defer" src="{{url_for('static', filename='js/custom.js')}}"></script>
