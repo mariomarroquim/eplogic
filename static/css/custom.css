@@ -8,6 +8,10 @@ p, ul, li {
   text-align: justify;
 }
 
+ul {
+  padding-left: 28px;
+}
+
 .strong {
   font-weight: bold;
 }
