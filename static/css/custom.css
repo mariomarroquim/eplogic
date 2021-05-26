@@ -1,5 +1,6 @@
 body {
-  margin: -21px 0px 24px 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
 }
 
 p, ul, li {
@@ -12,7 +13,7 @@ p, ul, li {
 }
 
 .header {
-  padding: 24px 24px 18px 24px;
+  padding: 14px 24px 18px 24px;
   background-color: #43AAB4;
 }
 
@@ -21,20 +22,14 @@ p, ul, li {
   text-decoration: none;
 }
 
-.instructions {
-  padding: 22px 20px 4px 20px;
-  background-color: #f0f0f0;
-}
-
 .content {
-  padding: 24px 20px 24px 24px;
+  padding: 24px;
 }
 
 .result {
-  border: 1px dotted;
-  margin-top: 22px;
-  margin-bottom: 16px;
-  padding: 2px 18px 2px 18px;
+  margin: 26px 0px 16px 0px;
+  padding: 2px 22px 2px 22px;
+  border: 1px dashed;
 }
 
 .result--negative {
@@ -50,12 +45,14 @@ p, ul, li {
   font-weight: bold;
 }
 
-.footer {
-  padding: 0px 24px 6px 24px;
-  color: gray;
+.instructions, .api_access {
+  padding: 24px 20px 6px 20px;
+  background-color: #f0f0f0;
 }
 
-.footer hr {
-  border: none;
+.footer {
+  margin: 30px 0px 0px 0px;
+  padding: 24px;
   border-top: 1px dashed #cccccc;
+  color: gray;
 }

@@ -19,7 +19,7 @@ $(document).ready(function(){
       }
 
       $('#result').show();
-    });
+    }).fail(function() { alert("EpLogic could not continue.\n\nPlease, check if all fields are filled."); });
 
     return false;
   });

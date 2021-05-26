@@ -19,18 +19,18 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route("/predict", methods=['GET'])
+@app.route("/predict", methods=['GET', 'POST'])
 def predict():
   try:
-    eplet_data = [[(0, 1)[request.args.get('hla_locus') == 'abc'],
-                   (0, 1)[request.args.get('hla_locus') == 'drb'],
-                   (0, 1)[request.args.get('hla_locus') == 'dq'],
-                   (0, 1)[request.args.get('hla_locus') == 'dp'],
+    eplet_data = [[(0, 1)[request.args.get('eplet_locus') == 'abc'],
+                   (0, 1)[request.args.get('eplet_locus') == 'drb'],
+                   (0, 1)[request.args.get('eplet_locus') == 'dq'],
+                   (0, 1)[request.args.get('eplet_locus') == 'dp'],
                    int(request.args.get('panel_nc')),
                    int(request.args.get('panel_pc')),
-                   int(request.args.get('panel_allele_count')),
-                   int(request.args.get('panel_min_mfi')),
-                   int(request.args.get('panel_max_mfi'))]]
+                   int(request.args.get('eplet_allele_qtd')),
+                   int(request.args.get('eplet_min_mfi')),
+                   int(request.args.get('eplet_max_mfi'))]]
 
 
     results = eplogic.predict(eplet_data)
@@ -42,7 +42,7 @@ def predict():
     response.mimetype = 'application/json'
     return response
   except:
-    return "Please, verify if all parameters (hla_locus, panel_allele_count, panel_nc, panel_pc, panel_min_mfi, panel_max_mfi) are present and contain integer values.", 500
+    return "Please, verify if all parameters (eplet_locus, eplet_allele_qtd, eplet_min_mfi, eplet_max_mfi, panel_nc, panel_pc) are present and contain integer values.", 500
 
 if __name__ == "__main__":
   #app.run(host='0.0.0.0')

@@ -25,7 +25,8 @@
 
     <ul>
       <li>Fill the eplet's data from the SAB panel.</li>
-      <li>Click "Continue" to proceed.</li>
+      <li>Check if all fields are filled.</li>
+      <li>Click "Continue".</li>
     </ul>
   </div>
 
@@ -35,9 +36,9 @@
         <fieldset>
           <div class="pure-g">
             <div class="pure-u-1-2">
-              <label for="hla_locus">HLA locus group</label>
+              <label for="eplet_locus">HLA locus group</label>
 
-              <select id="hla_locus" name="hla_locus" class="pure-u-22-24">
+              <select id="eplet_locus" name="eplet_locus" class="pure-u-22-24">
                 <option value="">Selecione...</option>
                 <option value="abc">ABC</option>
                 <option value="drb">DRB</option>
@@ -47,8 +48,8 @@
             </div>
 
             <div class="pure-u-1-2">
-              <label for="panel_allele_count">Allele quantity</label>
-              <input type="number" min="0" step="1" id="panel_allele_count" name="panel_allele_count" class="pure-u-1"/>
+              <label for="eplet_allele_qtd">Allele quantity</label>
+              <input type="number" min="0" step="1" id="eplet_allele_qtd" name="eplet_allele_qtd" class="pure-u-1"/>
             </div>
           </div>
 
@@ -56,13 +57,13 @@
 
           <div class="pure-g">
             <div class="pure-u-1-2">
-              <label for="panel_min_mfi">Eplet's  min. MFI</label>
-              <input type="number" min="0" step="1" id="panel_min_mfi" name="panel_min_mfi" class="pure-u-22-24"/>
+              <label for="eplet_min_mfi">Eplet's  min. MFI</label>
+              <input type="number" min="0" step="1" id="eplet_min_mfi" name="eplet_min_mfi" class="pure-u-22-24"/>
             </div>
 
             <div class="pure-u-1-2">
-              <label for="panel_max_mfi">Eplet's max. MFI</label>
-              <input type="number" min="0" step="1" id="panel_max_mfi" name="panel_max_mfi" class="pure-u-1"/>
+              <label for="eplet_max_mfi">Eplet's max. MFI</label>
+              <input type="number" min="0" step="1" id="eplet_max_mfi" name="eplet_max_mfi" class="pure-u-1"/>
             </div>
           </div>
 
@@ -100,17 +101,53 @@
         <p>
           Note: antibody-reactive HLA eplets are the ones against the recipient may present important anti-HLA antibodies.
           If the donor shares one of these eplets, the risk of the recipient developing antibody-mediated rejection against the graft will be greater.
-          Remember that all results presented here are based on probabilities. This tool is for research use only!
+          Remember that all results presented here are based on probabilities. <span class="strong">This tool is for research use only!</span>
         </p>
       </div>
     </div>
   </div>
 
+  <div class="api_access">
+    <span class="strong">API access:</span>
+
+    <br/>
+
+    <ul>
+      <li>
+        Endpoint:
+        <ul>
+          <li>URL: https://eplogic.libufpi.com.br.</li>
+          <li>HTTP Methods: GET or POST.</li>
+          <li>There are no limit of requests.</li>
+        </ul>
+      </li>
+
+      <li>
+        Input:
+        <ul>
+          <li>Params: "eplet_locus", "eplet_allele_qtd", "eplet_min_mfi", "eplet_max_mfi", "panel_nc" and "panel_pc".</li>
+          <li>"eplet_locus" can be "abc", "drb", "dq" or "dp".</li>
+          <li>Full URL example: <a href="https://eplogic.libufpi.com.br/predict?eplet_locus=ABC&eplet_allele_qtd=17&eplet_min_mfi=509&eplet_max_mfi=12000&panel_nc=102&panel_pc=13200">Click here</a>.</li>
+        </ul>
+      </li>
+
+      <li>
+        Output:
+
+        <ul>
+          <li>JSON with "label", "score0" and "score1" attributes.</li>
+          <li>"label" is the result (the value "1" is for antibody-reactive).</li>
+          <li>"score0" and "score1" are the prob. of the result beeing 0 or 1.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
   <div class="footer">
-    <hr/>
-    <br/>
     © 2021 <a href="https://www.libufpi.com.br">LIB-UFPI</a>. All rights reserved.
+
     <br/>
+
     <small>Version: 1.0.0-alpha. For research use only.</small>
   </div>
 
