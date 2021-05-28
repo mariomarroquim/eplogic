@@ -45,5 +45,5 @@ def predict():
     return "Please, verify if all parameters (eplet_locus, eplet_allele_qtd, eplet_min_mfi, eplet_max_mfi, panel_nc, panel_pc) are present and contain valid values.", 500
 
 if __name__ == "__main__":
-  #app.run(host='0.0.0.0')
-  serve(app, host='0.0.0.0', port=80)
+  #app.run(host='0.0.0.0', port=5000, threaded=True)
+  serve(app, host='0.0.0.0', port=80, threads=4)

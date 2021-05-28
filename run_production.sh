@@ -1,3 +1,6 @@
 killall python3
-chmod -R 755 .
-nohup python3 app.py &
+
+find -type d -exec chmod 750 {} \;
+find -type f -exec chmod 640 {} \;
+
+FLASK_ENV=production nohup python3 app.py > log.txt &
