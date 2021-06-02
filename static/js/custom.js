@@ -15,6 +15,8 @@ $(document).ready(function(){
   $("#form").submit(function(event){
     event.preventDefault();
 
+    $("#continue").html("Please, wait...");
+
     var url = $(this).attr("action");
     var data = $("#form").serialize();
 
@@ -33,6 +35,8 @@ $(document).ready(function(){
 
       $("#result").show();
     }).fail(function() { alert("EpLogic could not continue.\n\nPlease, check if all fields are filled."); });
+
+    $("#continue").html("Continue");
 
     return false;
   });
