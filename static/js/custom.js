@@ -15,7 +15,7 @@ $(document).ready(function(){
   $("#form").submit(function(event){
     event.preventDefault();
 
-    $("#continue").html("Please, wait...");
+    $("#continue").attr("disabled", true).html("Please, wait...");
 
     var url = $(this).attr("action");
     var data = $("#form").serialize();
@@ -34,9 +34,12 @@ $(document).ready(function(){
       }
 
       $("#result").show();
-    }).fail(function() { alert("EpLogic could not continue.\n\nPlease, check if all fields are filled."); });
+    }).fail(function(){
+      alert("EpLogic could not continue.\n\nPlease, check if all fields are filled.");
 
-    $("#continue").html("Continue");
+    }).always(function(){
+      $("#continue").attr("disabled", false).removeAttr("disabled").html("Continue");
+    });
 
     return false;
   });
